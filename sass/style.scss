@@ -1,0 +1,53 @@
+// helpers
+
+.padding-top{
+    padding-top: 20px;
+}
+.vh{
+    height: 80vh;
+    overflow: auto;
+}
+// navbar
+
+#slide-out{
+    overflow: hidden;
+}
+ .userView .background{
+width: 300px;
+}
+
+// main
+.main{
+    padding-left: 200px;
+    @media screen and (max-width: 995px) {
+    padding-left: 0px;
+    }
+}
+.col.s6.budget{
+    padding-left: 50px;
+    padding-top: 24px;
+}
+.small.prefix{
+    font-size: 1rem;
+    padding-top: 12px;
+}
+.input-field .prefix ~ input{
+    margin-left: 1rem;
+}
+.toast{
+    background-color: #e91e63;
+}
+
+//daily
+.cardmonth{
+    margin-top: 44px;
+}
+td.center{
+    .dayincal{
+        font-weight: bold;
+        font-size: 16px;
+        float: left;
+        text-align: left;
+        margin-top: -12px;
+    }
+}
