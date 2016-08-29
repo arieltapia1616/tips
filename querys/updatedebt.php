@@ -2,6 +2,6 @@
 $pay = $_POST['pay'];
 $id = $_POST['id'];
 
-$sql='UPDATE comensales SET pago='.$pay.' WHERE id ='.$id;
+$sql='UPDATE diners SET pay='.$pay.' WHERE id ='.$id;
 $comensales = $conn->prepare($sql);
 $comensales->execute();

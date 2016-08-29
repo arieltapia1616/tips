@@ -8,8 +8,8 @@ $totalDiners = $diners->fetchAll();
 // print_r(json_encode($totalDiners));
 
 ?>
-<div class="col s6 ">
     <?php $share=50; ?>
+    <div class="col s6 share" data-share=<?=$share;?>>
     <div class="vh">
 
         <table>
