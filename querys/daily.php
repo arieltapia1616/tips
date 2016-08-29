@@ -1,7 +1,21 @@
 <?php
+include "db.php";
 $d = date('j');//day
 $m = date('m');//month
 $y = date('Y');//year
+// SELECT 'pay', DATE_FORMAT(day,'%e') AS dayin FROM `daily` WHERE MONTH(day) = 8
+
+$tips = $conn->prepare("SELECT pay, DATE_FORMAT(day,'%e') AS dayInNumber FROM daily WHERE MONTH(day) =".$m );
+$tips->execute();
+
+$totalTips = $tips->fetchAll();
+
+ // print_r($totalTips);die();
+foreach ($totalTips as $tips) {
+    $totTips[]=[$tips['dayInNumber'] =>$tips['pay']];
+}
+print_r($totTips);
+
 $totalDays = cal_days_in_month(CAL_GREGORIAN,$m,$y);
 $daysArray = [];
 
