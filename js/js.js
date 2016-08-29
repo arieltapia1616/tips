@@ -63,6 +63,16 @@ $('document').ready(function(){
 
         })
     })
+    $('#config').click(function(){
+        $.ajax({
+            url:'querys/config.php'
+        }).done(function(data){
+
+            $('#ajax').html(data)
+
+        })
+    })
+
 
 
 

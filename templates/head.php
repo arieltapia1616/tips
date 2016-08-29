@@ -23,7 +23,7 @@
         </li>
         <li><a class="waves-effect" id="income">Recaudación</a></li>
         <li><a class="waves-effect" id="tips">Propinas</a></li>
-        <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+        <li><a class="waves-effect" id="config">Configuración</a></li>
      </ul>
    <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
 
