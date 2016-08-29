@@ -12,7 +12,7 @@ $totalTips = $tips->fetchAll();
 
  // print_r($totalTips);die();
 foreach ($totalTips as $tips) {
-    $totTips[]=[$tips['dayInNumber'] =>$tips['pay']];
+    $totTips[$tips['dayInNumber']] = $tips['pay'];
 }
 print_r($totTips);
 
@@ -77,7 +77,8 @@ for ($i=1; $i <= $totalDays; $i++) {
                         </span>
                         <div class="input-field">
                             <i class="small material-icons prefix">$</i>
-                            <input  type="text" value="">
+
+                            <input   type="text" value="<?php echo $totTips[$day['day']]; ?>">
                         </div>
                     </td>
 
