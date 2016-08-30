@@ -61,6 +61,24 @@ $('document').ready(function(){
 
             $('#ajax').html(data)
 
+
+            $('.payedDaily').change(function(){
+                var id= $(this).data('id');
+                var pay=$(this).val();
+                var day=$(this).data('day');
+
+                // console.log(id, pay);
+                $.ajax({
+                    url:'querys/updatedaily.php',
+                    method:'POST',
+                    data:{
+                        day:day,
+                        id:id,
+                        pay:pay
+                    },
+                })
+            });
+
         })
     })
     $('#config').click(function(){

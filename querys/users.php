@@ -1,9 +1,12 @@
 <?php include "db.php";
 $m = date('m');//month
+$y = date('Y');//Year
 
 if (isset($_GET['period'])) {
     $m = $_GET['period'];
 }
+
+
 
 $diners = $conn->prepare('SELECT * FROM  diners  WHERE 1 ');
 $diners->execute();
@@ -13,7 +16,7 @@ $totalDiners = $diners->fetchAll();
 
 // print_r($totalDiners);
 ?>
-<div class="col s6 aca">
+<div class="col s9">
 
 <a class="btn-floating btn-large waves-effect waves-light teal lighten-2"><i class="material-icons">add</i></a>
     <div class="vh80">
@@ -26,8 +29,8 @@ $totalDiners = $diners->fetchAll();
                        <td class="<?=$class?>">
 
                           <select class"select" data-id="<?=$diners['id']?>" >
-                            <option value="2">No fué PM</option>
-                            <option value="1" <?php if ($diners['was']==1){echo "selected";} ?>>Fué PM</option>
+                            <option value="2">No fue PM</option>
+                            <option value="1" <?php if ($diners['was']==1){echo "selected";} ?>>Fue PM</option>
                           </select>
 
 
@@ -40,4 +43,7 @@ $totalDiners = $diners->fetchAll();
            </tbody>
        </table>
     </div>
+</div>
+<div class="col s3">
+
 </div>

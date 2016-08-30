@@ -22,7 +22,7 @@ $totalDiners = $diners->fetchAll();
              <tr>
                  <th data-field="id">Nombre</th>
                  <th data-field="name">Pagó</th>
-                 <th data-field="price">Debe</th>
+                 <th data-field="price">Deuda</th>
              </tr>
            </thead>
 
