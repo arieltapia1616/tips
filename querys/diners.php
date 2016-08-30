@@ -1,11 +1,16 @@
 <?php include "db.php";
+$m = date('m');//month
 
-$diners = $conn->prepare('SELECT * FROM diners');
+if (isset($_GET['period'])) {
+    $m = $_GET['period'];
+}
+
+$diners = $conn->prepare('SELECT p.id, p.pay, p.day_pay, d.name FROM pay p, diners d WHERE p.diner_id = d.id and p.period ='.$m);
 $diners->execute();
 
 $totalDiners = $diners->fetchAll();
 
-// print_r(json_encode($totalDiners));
+ // print_r(json_encode($totalDiners));
 
 ?>
     <?php $share=50; ?>

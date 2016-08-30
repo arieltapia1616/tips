@@ -14,7 +14,7 @@ $totalTips = $tips->fetchAll();
 foreach ($totalTips as $tips) {
     $totTips[$tips['dayInNumber']] = $tips['pay'];
 }
-print_r($totTips);
+// print_r($totTips);
 
 $totalDays = cal_days_in_month(CAL_GREGORIAN,$m,$y);
 $daysArray = [];

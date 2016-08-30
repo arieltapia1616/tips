@@ -72,7 +72,19 @@ $('document').ready(function(){
 
         })
     })
+    $('#user').click(function(){
+        $.ajax({
+            url:'querys/users.php'
+        }).done(function(data){
 
+            $('#ajax').html(data)
+
+            // $('.aca').append('<a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>')
+            $('select').material_select();
+
+
+        })
+    })
 
 
 
