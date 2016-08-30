@@ -7,6 +7,12 @@
     height: 80vh;
     overflow: auto;
 }
+.vh80{
+    height: 80vh;
+    overflow-x: hidden;;
+    overflow-y: auto;
+    width: 500px;
+}
 // navbar
 
 #slide-out{

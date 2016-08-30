@@ -16,7 +16,7 @@ $totalDiners = $diners->fetchAll();
 <div class="col s6 aca">
 
 <a class="btn-floating btn-large waves-effect waves-light teal lighten-2"><i class="material-icons">add</i></a>
-
+    <div class="vh80">
         <table class="dinersSetup">
                <tbody>
                <?php foreach ($totalDiners as $diners): ?>
@@ -39,5 +39,5 @@ $totalDiners = $diners->fetchAll();
                </tr>
            </tbody>
        </table>
-
+    </div>
 </div>
