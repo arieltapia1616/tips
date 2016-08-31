@@ -18,7 +18,7 @@ $totalDiners = $diners->fetchAll();
 ?>
 <div class="col s9">
 
-<a class="btn-floating btn-large waves-effect waves-light teal lighten-2"><i class="material-icons">add</i></a>
+<a class="btn-floating btn-large waves-effect waves-light teal lighten-2 modal-trigger" href="#modal"><i class="material-icons">add</i></a>
     <div class="vh80">
         <table class="dinersSetup">
                <tbody>
@@ -27,12 +27,19 @@ $totalDiners = $diners->fetchAll();
                        <td><?=$diners['name']?></td>
                        <?php if ($diners['was']==1){$was='Si'; $class = 'red-text';}else{$was='No';$class ="";} ?>
                        <td class="<?=$class?>">
-
+<!--
                           <select class"select" data-id="<?=$diners['id']?>" >
                             <option value="2">No fue PM</option>
                             <option value="1" <?php if ($diners['was']==1){echo "selected";} ?>>Fue PM</option>
-                          </select>
-
+                          </select> -->
+                          <div class="switch">
+                            <label>
+                              No fue PM
+                              <input data-id ="<?=$diners['id']?>" <?php if ($diners['was']==1){echo "checked";} ?> type="checkbox">
+                              <span class="lever"></span>
+                              Fue PM
+                            </label>
+                          </div>
 
                        </td>
                        <td></td>
@@ -47,3 +54,19 @@ $totalDiners = $diners->fetchAll();
 <div class="col s3">
 
 </div>
+
+<!-- modal -->
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <h4>Nuevo comensal</h4>
+          <div class="input-field col s6">
+              <input id="first_name" type="text" class="validate">
+              <label for="first_name">Nombre</label>
+          </div>
+    </div>
+    <div class="modal-footer">
+        <a  class=" modal-action modal-close waves-effect waves-light orange light btn-flat  ">Cancelar</a>
+        <a  id="subUser" class=" modal-action modal-close waves-effect waves-green btn-flat">Agregar</a>
+    </div>
+  </div>

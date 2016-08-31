@@ -97,8 +97,45 @@ $('document').ready(function(){
 
             $('#ajax').html(data)
 
-            // $('.aca').append('<a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>')
-            $('select').material_select();
+            $('.modal-trigger').leanModal();
+
+            $('#subUser').click(function(){
+                var name = $('#first_name').val();
+
+                $.ajax({
+                    method:'POST',
+                    data:{
+                        name:name,
+                    },
+                    url:'querys/updateUser.php?op=2'
+                }).done(function(data){
+                    $('#ajax').load('querys/users.php');
+                })
+
+
+            })
+
+            $('input ').click(function(){
+
+                var id= $(this).data('id');
+                if ($(this).prop('checked')) {
+                        // console.log('yes');
+                        was = 1;
+                }else{
+                    // console.log('no');
+                        was = 0;
+
+                }
+
+                $.ajax({
+                    url:'querys/updateUser.php?op=1',
+                    method:'POST',
+                    data:{
+                        was:was,
+                        id:id
+                    },
+                })
+            });
 
 
         })
